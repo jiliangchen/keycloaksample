@@ -1,0 +1,35 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:2.0.5.RELEASE")
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'idea'
+apply plugin: 'org.springframework.boot'
+apply plugin: 'io.spring.dependency-management'
+
+bootJar {
+    baseName = 'gs-batch-processing'
+    version =  '0.1.0'
+}
+
+repositories {
+    mavenCentral()
+}
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+dependencies {
+    compile("org.springframework.boot:spring-boot-starter-batch")
+    compile("org.hsqldb:hsqldb")
+    compile("org.keycloak:keycloak-admin-client:6.0.0")
+    compile("org.jboss.resteasy:resteasy-client:3.6.2.Final")
+    compile("org.jboss.resteasy:resteasy-jackson2-provider:3.6.2.Final")
+    testCompile("junit:junit")
+}
