@@ -9,3 +9,5 @@ https://sites.google.com/site/soracane/home/springnitsuite/spring-batch/12-chank
 https://spring.io/guides/gs/batch-processing/
 
 https://www.petrikainulainen.net/programming/spring-framework/spring-batch-tutorial-reading-information-from-a-rest-api/
+
+https://www.dineshonjava.com/spring-batch-itemreader-itemwriter/
