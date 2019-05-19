@@ -6,6 +6,7 @@ import org.keycloak.admin.client.KeycloakBuilder;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
 public class Application {
@@ -19,20 +20,5 @@ public class Application {
         //KEYCLOAK_PASSWORD = new String(console.readPassword("Password: "));
 
         SpringApplication.run(Application.class, args);
-    }
-
-    @Bean
-    Keycloak keycloak() {
-        Keycloak kc = KeycloakBuilder.builder()
-                .serverUrl("http://localhost:8080/auth")
-                .realm("demo")
-                .username("jiliangchen")
-                .password("cjl123456")
-                .clientId("admin-cli")
-                .resteasyClient(
-                        new ResteasyClientBuilder()
-                                .connectionPoolSize(10).build()
-                ).build();
-        return kc;
     }
 }

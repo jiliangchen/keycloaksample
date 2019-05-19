@@ -2,7 +2,10 @@ package com.rakufit.keycloak;
 
 import javax.sql.DataSource;
 
+import com.rakufit.keycloak.listener.JobCompletionNotificationListener;
+import org.jboss.resteasy.client.jaxrs.ResteasyClientBuilder;
 import org.keycloak.admin.client.Keycloak;
+import org.keycloak.admin.client.KeycloakBuilder;
 import org.springframework.batch.core.Job;
 import org.springframework.batch.core.Step;
 import org.springframework.batch.core.configuration.annotation.EnableBatchProcessing;
@@ -20,11 +23,13 @@ import org.springframework.batch.repeat.RepeatContext;
 import org.springframework.batch.repeat.exception.ExceptionHandler;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.io.ClassPathResource;
 
 @Configuration
 @EnableBatchProcessing
+@ComponentScan
 public class BatchConfiguration {
 
     @Autowired
@@ -32,6 +37,21 @@ public class BatchConfiguration {
 
     @Autowired
     public StepBuilderFactory stepBuilderFactory;
+
+    @Bean
+    Keycloak keycloak() {
+        Keycloak kc = KeycloakBuilder.builder()
+                .serverUrl("http://localhost:8080/auth")
+                .realm("demo")
+                .username("jiliangchen")
+                .password("cjl123456")
+                .clientId("admin-cli")
+                .resteasyClient(
+                        new ResteasyClientBuilder()
+                                .connectionPoolSize(10).build()
+                ).build();
+        return kc;
+    }
 
     // tag::readerwriterprocessor[]
     @Bean
@@ -68,6 +88,7 @@ public class BatchConfiguration {
     // end::readerwriterprocessor[]
 
     // tag::jobstep[]
+    @Autowired
     @Bean
     public Job postUserJob(JobCompletionNotificationListener listener, Step step1) {
         System.out.println("================" + Application.KEYCLOAK_USER + "/" + Application.KEYCLOAK_PASSWORD + "=================");
@@ -96,9 +117,11 @@ public class BatchConfiguration {
             public void handleException(RepeatContext context, Throwable throwable) throws Throwable {
                 // 例外を投げず、終了する
                 System.out.println("~~~~~~~~~~~~~jiliangchen~~~~~~~~~~~~~~~");
+                throwable.printStackTrace();
                 context.setTerminateOnly();
             }
 
         };
     }
+
 }

@@ -34,8 +34,8 @@ public class KeyCloakUserItemWriter implements ItemWriter<KeyCloakUser> {
             UsersResource userRessource = realmResource.users();
 
             // Create user (requires manage-users role)
-            Response response = userRessource.create(ur);
-            System.out.println("Repsonse: " + response.getStatusInfo());
+            //Response response = userRessource.create(ur);
+            //System.out.println("Repsonse: " + response.getStatusInfo());
         }
     }
 }

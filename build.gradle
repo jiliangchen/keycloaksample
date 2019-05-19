@@ -13,11 +13,6 @@ apply plugin: 'idea'
 apply plugin: 'org.springframework.boot'
 apply plugin: 'io.spring.dependency-management'
 
-bootJar {
-    baseName = 'gs-batch-processing'
-    version =  '0.1.0'
-}
-
 repositories {
     mavenCentral()
 }
@@ -32,4 +27,10 @@ dependencies {
     compile("org.jboss.resteasy:resteasy-client:3.6.2.Final")
     compile("org.jboss.resteasy:resteasy-jackson2-provider:3.6.2.Final")
     testCompile("junit:junit")
+    testCompile("org.mockito:mockito-core")
+    testCompile('org.springframework.boot:spring-boot-starter-test')
+}
+
+bootJar {
+    mainClassName = 'org.springframework.batch.core.launch.support.CommandLineJobRunner'
 }

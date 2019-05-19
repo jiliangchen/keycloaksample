@@ -1,4 +1,4 @@
-package com.rakufit.keycloak;
+package com.rakufit.keycloak.listener;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -25,12 +25,8 @@ public class JobCompletionNotificationListener extends JobExecutionListenerSuppo
 	public void afterJob(JobExecution jobExecution) {
 		if(jobExecution.getStatus() == BatchStatus.COMPLETED) {
 			log.info("!!! JOB FINISHED! Time to verify the results");
-
-			jdbcTemplate.query("SELECT first_name, last_name FROM people",
-				(rs, row) -> new KeyCloakUser(
-					rs.getString(1),
-					rs.getString(2))
-			).forEach(person -> log.info("Found <" + person + "> in the database."));
+			log.info("jobID:" + jobExecution.getJobId());
+			log.info("JobConfigurationName:" + jobExecution.getJobConfigurationName());
 		}
 	}
 }
