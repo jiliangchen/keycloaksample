@@ -11,3 +11,10 @@ https://spring.io/guides/gs/batch-processing/
 https://www.petrikainulainen.net/programming/spring-framework/spring-batch-tutorial-reading-information-from-a-rest-api/
 
 https://www.dineshonjava.com/spring-batch-itemreader-itemwriter/
+
+
+https://examples.javacodegeeks.com/enterprise-java/spring/batch/spring-batch-commandlinejobrunner-example/
+http://springbatchbyexample.blogspot.com/2014/09/validation-input-data.html
+https://github.com/making/spring-boot-batch-multi-jobs
+
+https://stackoverflow.com/questions/34217101/spring-batch-junit-test-for-multiple-jobs
