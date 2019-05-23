@@ -20,3 +20,4 @@ https://github.com/making/spring-boot-batch-multi-jobs
 https://stackoverflow.com/questions/34217101/spring-batch-junit-test-for-multiple-jobs
 
 https://github.com/spring-projects/spring-ldap/tree/master/samples
+http://tugrulaslan.com/listing-active-directory-users-spring-ldap/
