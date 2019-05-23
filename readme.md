@@ -18,3 +18,5 @@ http://springbatchbyexample.blogspot.com/2014/09/validation-input-data.html
 https://github.com/making/spring-boot-batch-multi-jobs
 
 https://stackoverflow.com/questions/34217101/spring-batch-junit-test-for-multiple-jobs
+
+https://github.com/spring-projects/spring-ldap/tree/master/samples
