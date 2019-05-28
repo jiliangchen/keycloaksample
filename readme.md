@@ -21,3 +21,5 @@ https://stackoverflow.com/questions/34217101/spring-batch-junit-test-for-multipl
 
 https://github.com/spring-projects/spring-ldap/tree/master/samples
 http://tugrulaslan.com/listing-active-directory-users-spring-ldap/
+
+http://planet.jboss.org/post/getting_started_with_keycloak_securing_a_rest_service
