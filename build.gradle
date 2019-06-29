@@ -13,6 +13,7 @@ apply plugin: 'idea'
 apply plugin: 'org.springframework.boot'
 apply plugin: 'io.spring.dependency-management'
 apply plugin: 'jacoco'
+apply plugin: 'findbugs'
 
 jacoco {
     toolVersion = "0.8.3"
@@ -42,3 +43,15 @@ bootJar {
 
 // create test coverage every time the test task is performed
 test.finalizedBy jacocoTestReport
+
+findbugs {
+  ignoreFailures = true
+  findbugsTest.enabled=false
+}
+
+tasks.withType(FindBugs) {
+    reports {
+        xml.enabled = false
+        html.enabled = true
+    }
+}
