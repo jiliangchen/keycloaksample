@@ -1,0 +1,168 @@
+2019-06-26 22:34:05.372  INFO 743 --- [main] com.rakufit.keycloak.Application         : Starting Application on MBP-of-cjl.local with PID 743 (/Users/jiliangchen/workspace/keycloak/keycloak-docker/samples/adminclientdemo/bin started by jiliangchen in /Users/jiliangchen/workspace/keycloak/keycloak-docker/samples/adminclientdemo)
+2019-06-26 22:34:05.388  INFO 743 --- [main] com.rakufit.keycloak.Application         : No active profile set, falling back to default profiles: default
+2019-06-26 22:34:05.481  INFO 743 --- [main] s.c.a.AnnotationConfigApplicationContext : Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@45d2ade3: startup date [Wed Jun 26 22:34:05 JST 2019]; root of context hierarchy
+2019-06-26 22:34:07.041  INFO 743 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2019-06-26 22:34:07.047  WARN 743 --- [main] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=org.hsqldb.jdbcDriver was not found, trying direct instantiation.
+2019-06-26 22:34:07.585  INFO 743 --- [main] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Driver does not support get/set network timeout for connections. (feature not supported)
+2019-06-26 22:34:07.592  INFO 743 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2019-06-26 22:34:07.628  INFO 743 --- [main] o.s.jdbc.datasource.init.ScriptUtils     : Executing SQL script from URL [file:/Users/jiliangchen/workspace/keycloak/keycloak-docker/samples/adminclientdemo/bin/schema-all.sql]
+2019-06-26 22:34:07.638  INFO 743 --- [main] o.s.jdbc.datasource.init.ScriptUtils     : Executed SQL script from URL [file:/Users/jiliangchen/workspace/keycloak/keycloak-docker/samples/adminclientdemo/bin/schema-all.sql] in 10 ms.
+2019-06-26 22:34:09.258  INFO 743 --- [main] o.s.b.c.r.s.JobRepositoryFactoryBean     : No database type set, using meta data indicating: HSQL
+2019-06-26 22:34:09.681  INFO 743 --- [main] o.s.b.c.l.support.SimpleJobLauncher      : No TaskExecutor has been set, defaulting to synchronous executor.
+2019-06-26 22:34:09.718  INFO 743 --- [main] o.s.jdbc.datasource.init.ScriptUtils     : Executing SQL script from class path resource [org/springframework/batch/core/schema-hsqldb.sql]
+2019-06-26 22:34:09.731  INFO 743 --- [main] o.s.jdbc.datasource.init.ScriptUtils     : Executed SQL script from class path resource [org/springframework/batch/core/schema-hsqldb.sql] in 13 ms.
+2019-06-26 22:34:10.048  INFO 743 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2019-06-26 22:34:10.050  INFO 743 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'dataSource' has been autodetected for JMX exposure
+2019-06-26 22:34:10.059  INFO 743 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Located MBean 'dataSource': registering with JMX server as MBean [com.zaxxer.hikari:name=dataSource,type=HikariDataSource]
+2019-06-26 22:34:10.086  INFO 743 --- [main] com.rakufit.keycloak.Application         : Started Application in 5.828 seconds (JVM running for 7.526)
+2019-06-26 22:34:10.089  INFO 743 --- [main] o.s.b.a.b.JobLauncherCommandLineRunner   : Running default command line with: []
+2019-06-26 22:34:10.350  INFO 743 --- [main] o.s.b.c.l.support.SimpleJobLauncher      : Job: [FlowJob: [name=postUserJob]] launched with the following parameters: [{run.id=1}]
+2019-06-26 22:34:10.383  INFO 743 --- [main] o.s.batch.core.job.SimpleStepHandler     : Executing step: [step1]
+2019-06-26 22:34:10.474  INFO 743 --- [main] c.r.keycloak.KeyCloakUserItemWriter      : ~~~~~~~~~~~~~~~~~~~~~~~~~~KeyCloakUser:firstName: null, lastName: null/userName:null
+2019-06-26 22:34:10.573  INFO 743 --- [main] c.r.keycloak.KeyCloakUserItemWriter      : ~~~~~~~~~~~~~~~~~~~~~~~~~~KeyCloakUser:firstName: null, lastName: null/userName:null
+2019-06-26 22:34:10.600  INFO 743 --- [main] c.r.keycloak.KeyCloakUserItemWriter      : ~~~~~~~~~~~~~~~~~~~~~~~~~~KeyCloakUser:firstName: null, lastName: null/userName:null
+2019-06-26 22:34:10.634  INFO 743 --- [main] c.r.keycloak.KeyCloakUserItemWriter      : ~~~~~~~~~~~~~~~~~~~~~~~~~~KeyCloakUser:firstName: null, lastName: null/userName:null
+2019-06-26 22:34:10.665  INFO 743 --- [main] c.r.keycloak.KeyCloakUserItemWriter      : ~~~~~~~~~~~~~~~~~~~~~~~~~~KeyCloakUser:firstName: null, lastName: null/userName:null
+2019-06-26 22:34:10.705  INFO 743 --- [main] .r.k.l.JobCompletionNotificationListener : !!! JOB FINISHED! Time to verify the results
+2019-06-26 22:34:10.706  INFO 743 --- [main] .r.k.l.JobCompletionNotificationListener : jobID:0
+2019-06-26 22:34:10.707  INFO 743 --- [main] .r.k.l.JobCompletionNotificationListener : JobConfigurationName:null
+2019-06-26 22:34:10.710  INFO 743 --- [main] o.s.b.c.l.support.SimpleJobLauncher      : Job: [FlowJob: [name=postUserJob]] completed with the following parameters: [{run.id=1}] and the following status: [COMPLETED]
+2019-06-26 22:34:10.716  INFO 743 --- [Thread-2] s.c.a.AnnotationConfigApplicationContext : Closing org.springframework.context.annotation.AnnotationConfigApplicationContext@45d2ade3: startup date [Wed Jun 26 22:34:05 JST 2019]; root of context hierarchy
+2019-06-26 22:34:10.719  INFO 743 --- [Thread-2] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans on shutdown
+2019-06-26 22:34:10.721  INFO 743 --- [Thread-2] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans
+2019-06-26 22:34:10.725  INFO 743 --- [Thread-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2019-06-26 22:34:10.732  INFO 743 --- [Thread-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2019-06-26 22:36:05.614  INFO 787 --- [main] com.rakufit.keycloak.Application         : Starting Application on MBP-of-cjl.local with PID 787 (/Users/jiliangchen/workspace/keycloak/keycloak-docker/samples/adminclientdemo/bin started by jiliangchen in /Users/jiliangchen/workspace/keycloak/keycloak-docker/samples/adminclientdemo)
+2019-06-26 22:36:05.624  INFO 787 --- [main] com.rakufit.keycloak.Application         : No active profile set, falling back to default profiles: default
+2019-06-26 22:36:08.528  WARN 787 --- [main] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=org.hsqldb.jdbcDriver was not found, trying direct instantiation.
+2019-06-26 22:36:09.774  INFO 787 --- [main] com.rakufit.keycloak.Application         : Started Application in 5.281 seconds (JVM running for 6.34)
+2019-06-26 22:36:10.119  INFO 787 --- [main] c.r.keycloak.KeyCloakUserItemWriter      : ~~~~~~~~~~~~~~~~~~~~~~~~~~KeyCloakUser:firstName: null, lastName: null/userName:null
+2019-06-26 22:36:10.196  INFO 787 --- [main] c.r.keycloak.KeyCloakUserItemWriter      : ~~~~~~~~~~~~~~~~~~~~~~~~~~KeyCloakUser:firstName: null, lastName: null/userName:null
+2019-06-26 22:36:10.225  INFO 787 --- [main] c.r.keycloak.KeyCloakUserItemWriter      : ~~~~~~~~~~~~~~~~~~~~~~~~~~KeyCloakUser:firstName: null, lastName: null/userName:null
+2019-06-26 22:36:10.247  INFO 787 --- [main] c.r.keycloak.KeyCloakUserItemWriter      : ~~~~~~~~~~~~~~~~~~~~~~~~~~KeyCloakUser:firstName: null, lastName: null/userName:null
+2019-06-26 22:36:10.270  INFO 787 --- [main] c.r.keycloak.KeyCloakUserItemWriter      : ~~~~~~~~~~~~~~~~~~~~~~~~~~KeyCloakUser:firstName: null, lastName: null/userName:null
+2019-06-26 22:36:10.309  INFO 787 --- [main] .r.k.l.JobCompletionNotificationListener : !!! JOB FINISHED! Time to verify the results
+2019-06-26 22:36:10.310  INFO 787 --- [main] .r.k.l.JobCompletionNotificationListener : jobID:0
+2019-06-26 22:36:10.310  INFO 787 --- [main] .r.k.l.JobCompletionNotificationListener : JobConfigurationName:null
+2019-06-26 22:41:41.009  INFO 922 --- [main] com.rakufit.keycloak.Application         : Starting Application on MBP-of-cjl.local with PID 922 (/Users/jiliangchen/workspace/keycloak/keycloak-docker/samples/adminclientdemo/bin started by jiliangchen in /Users/jiliangchen/workspace/keycloak/keycloak-docker/samples/adminclientdemo)
+2019-06-26 22:41:41.019  INFO 922 --- [main] com.rakufit.keycloak.Application         : No active profile set, falling back to default profiles: default
+2019-06-26 22:41:42.390  WARN 922 --- [main] s.c.a.AnnotationConfigApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'jobCompletionNotificationListener' defined in file [/Users/jiliangchen/workspace/keycloak/keycloak-docker/samples/adminclientdemo/bin/com/rakufit/keycloak/listener/JobCompletionNotificationListener.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'org.springframework.jdbc.core.JdbcTemplate' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
+2019-06-26 22:41:42.697 ERROR 922 --- [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Parameter 0 of constructor in com.rakufit.keycloak.listener.JobCompletionNotificationListener required a bean of type 'org.springframework.jdbc.core.JdbcTemplate' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'org.springframework.jdbc.core.JdbcTemplate' in your configuration.
+
+2019-06-26 22:43:20.552  INFO 941 --- [main] com.rakufit.keycloak.Application         : Starting Application on MBP-of-cjl.local with PID 941 (/Users/jiliangchen/workspace/keycloak/keycloak-docker/samples/adminclientdemo/bin started by jiliangchen in /Users/jiliangchen/workspace/keycloak/keycloak-docker/samples/adminclientdemo)
+2019-06-26 22:43:20.561  INFO 941 --- [main] com.rakufit.keycloak.Application         : No active profile set, falling back to default profiles: default
+2019-06-26 22:43:23.167  WARN 941 --- [main] s.c.a.AnnotationConfigApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'batchConfigurer' defined in class path resource [org/springframework/boot/autoconfigure/batch/BatchConfigurerConfiguration$JdbcBatchConfiguration.class]: Unsatisfied dependency expressed through method 'batchConfigurer' parameter 1; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'javax.sql.DataSource' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
+2019-06-26 22:43:23.514 ERROR 941 --- [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Parameter 1 of method batchConfigurer in org.springframework.boot.autoconfigure.batch.BatchConfigurerConfiguration$JdbcBatchConfiguration required a bean of type 'javax.sql.DataSource' that could not be found.
+	- Bean method 'dataSource' not loaded because @ConditionalOnProperty (spring.datasource.jndi-name) did not find property 'jndi-name'
+	- Bean method 'dataSource' not loaded because @ConditionalOnClass did not find required class 'javax.transaction.TransactionManager'
+
+
+Action:
+
+Consider revisiting the entries above or defining a bean of type 'javax.sql.DataSource' in your configuration.
+
+2019-06-26 22:46:51.939  INFO 989 --- [main] com.rakufit.keycloak.Application         : Starting Application on MBP-of-cjl.local with PID 989 (/Users/jiliangchen/workspace/keycloak/keycloak-docker/samples/adminclientdemo/bin started by jiliangchen in /Users/jiliangchen/workspace/keycloak/keycloak-docker/samples/adminclientdemo)
+2019-06-26 22:46:51.948  INFO 989 --- [main] com.rakufit.keycloak.Application         : No active profile set, falling back to default profiles: default
+2019-06-26 22:46:54.393  WARN 989 --- [main] s.c.a.AnnotationConfigApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'batchConfigurer' defined in class path resource [org/springframework/boot/autoconfigure/batch/BatchConfigurerConfiguration$JdbcBatchConfiguration.class]: Unsatisfied dependency expressed through method 'batchConfigurer' parameter 1; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'javax.sql.DataSource' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
+2019-06-26 22:46:54.732 ERROR 989 --- [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Parameter 1 of method batchConfigurer in org.springframework.boot.autoconfigure.batch.BatchConfigurerConfiguration$JdbcBatchConfiguration required a bean of type 'javax.sql.DataSource' that could not be found.
+	- Bean method 'dataSource' not loaded because @ConditionalOnProperty (spring.datasource.jndi-name) did not find property 'jndi-name'
+	- Bean method 'dataSource' not loaded because @ConditionalOnClass did not find required class 'javax.transaction.TransactionManager'
+
+
+Action:
+
+Consider revisiting the entries above or defining a bean of type 'javax.sql.DataSource' in your configuration.
+
+2019-06-26 22:57:32.825  INFO 1098 --- [main] com.rakufit.keycloak.Application         : Starting Application on MBP-of-cjl.local with PID 1098 (/Users/jiliangchen/workspace/keycloak/keycloak-docker/samples/adminclientdemo/bin started by jiliangchen in /Users/jiliangchen/workspace/keycloak/keycloak-docker/samples/adminclientdemo)
+2019-06-26 22:57:32.838  INFO 1098 --- [main] com.rakufit.keycloak.Application         : No active profile set, falling back to default profiles: default
+2019-06-26 22:57:35.605  WARN 1098 --- [main] s.c.a.AnnotationConfigApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'batchConfigurer' defined in class path resource [org/springframework/boot/autoconfigure/batch/BatchConfigurerConfiguration$JdbcBatchConfiguration.class]: Unsatisfied dependency expressed through method 'batchConfigurer' parameter 1; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'javax.sql.DataSource' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
+2019-06-26 22:57:35.941 ERROR 1098 --- [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Parameter 1 of method batchConfigurer in org.springframework.boot.autoconfigure.batch.BatchConfigurerConfiguration$JdbcBatchConfiguration required a bean of type 'javax.sql.DataSource' that could not be found.
+	- Bean method 'dataSource' not loaded because @ConditionalOnProperty (spring.datasource.jndi-name) did not find property 'jndi-name'
+	- Bean method 'dataSource' not loaded because @ConditionalOnClass did not find required class 'javax.transaction.TransactionManager'
+
+
+Action:
+
+Consider revisiting the entries above or defining a bean of type 'javax.sql.DataSource' in your configuration.
+
+2019-06-26 22:58:38.034  INFO 1112 --- [main] com.rakufit.keycloak.Application         : Starting Application on MBP-of-cjl.local with PID 1112 (/Users/jiliangchen/workspace/keycloak/keycloak-docker/samples/adminclientdemo/bin started by jiliangchen in /Users/jiliangchen/workspace/keycloak/keycloak-docker/samples/adminclientdemo)
+2019-06-26 22:58:38.049  INFO 1112 --- [main] com.rakufit.keycloak.Application         : No active profile set, falling back to default profiles: default
+2019-06-26 22:58:41.069  WARN 1112 --- [main] s.c.a.AnnotationConfigApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'batchConfigurer' defined in class path resource [org/springframework/boot/autoconfigure/batch/BatchConfigurerConfiguration$JdbcBatchConfiguration.class]: Unsatisfied dependency expressed through method 'batchConfigurer' parameter 1; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'javax.sql.DataSource' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
+2019-06-26 22:58:41.367 ERROR 1112 --- [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Parameter 1 of method batchConfigurer in org.springframework.boot.autoconfigure.batch.BatchConfigurerConfiguration$JdbcBatchConfiguration required a bean of type 'javax.sql.DataSource' that could not be found.
+	- Bean method 'dataSource' not loaded because @ConditionalOnProperty (spring.datasource.jndi-name) did not find property 'jndi-name'
+	- Bean method 'dataSource' not loaded because @ConditionalOnClass did not find required class 'javax.transaction.TransactionManager'
+
+
+Action:
+
+Consider revisiting the entries above or defining a bean of type 'javax.sql.DataSource' in your configuration.
+
+2019-06-26 22:59:29.671  INFO 1127 --- [main] com.rakufit.keycloak.Application         : Starting Application on MBP-of-cjl.local with PID 1127 (/Users/jiliangchen/workspace/keycloak/keycloak-docker/samples/adminclientdemo/bin started by jiliangchen in /Users/jiliangchen/workspace/keycloak/keycloak-docker/samples/adminclientdemo)
+2019-06-26 22:59:29.679  INFO 1127 --- [main] com.rakufit.keycloak.Application         : No active profile set, falling back to default profiles: default
+2019-06-26 22:59:30.925  WARN 1127 --- [main] o.s.b.c.c.a.DefaultBatchConfigurer       : No datasource was provided...using a Map based JobRepository
+2019-06-26 22:59:32.696  INFO 1127 --- [main] com.rakufit.keycloak.Application         : Started Application in 3.802 seconds (JVM running for 4.592)
+2019-06-26 22:59:32.893  INFO 1127 --- [main] c.r.keycloak.KeyCloakUserItemWriter      : ~~~~~~~~~~~~~~~~~~~~~~~~~~KeyCloakUser:firstName: null, lastName: null/userName:null
+2019-06-26 22:59:33.060  INFO 1127 --- [main] c.r.keycloak.KeyCloakUserItemWriter      : ~~~~~~~~~~~~~~~~~~~~~~~~~~KeyCloakUser:firstName: null, lastName: null/userName:null
+2019-06-26 22:59:33.095  INFO 1127 --- [main] c.r.keycloak.KeyCloakUserItemWriter      : ~~~~~~~~~~~~~~~~~~~~~~~~~~KeyCloakUser:firstName: null, lastName: null/userName:null
+2019-06-26 22:59:33.139  INFO 1127 --- [main] c.r.keycloak.KeyCloakUserItemWriter      : ~~~~~~~~~~~~~~~~~~~~~~~~~~KeyCloakUser:firstName: null, lastName: null/userName:null
+2019-06-26 22:59:33.166  INFO 1127 --- [main] c.r.keycloak.KeyCloakUserItemWriter      : ~~~~~~~~~~~~~~~~~~~~~~~~~~KeyCloakUser:firstName: null, lastName: null/userName:null
+2019-06-26 22:59:33.213  INFO 1127 --- [main] .r.k.l.JobCompletionNotificationListener : !!! JOB FINISHED! Time to verify the results
+2019-06-26 22:59:33.213  INFO 1127 --- [main] .r.k.l.JobCompletionNotificationListener : jobID:0
+2019-06-26 22:59:33.214  INFO 1127 --- [main] .r.k.l.JobCompletionNotificationListener : JobConfigurationName:null
+2019-06-26 23:00:20.085  INFO 1139 --- [main] com.rakufit.keycloak.Application         : Starting Application on MBP-of-cjl.local with PID 1139 (/Users/jiliangchen/workspace/keycloak/keycloak-docker/samples/adminclientdemo/bin started by jiliangchen in /Users/jiliangchen/workspace/keycloak/keycloak-docker/samples/adminclientdemo)
+2019-06-26 23:00:20.094  INFO 1139 --- [main] com.rakufit.keycloak.Application         : No active profile set, falling back to default profiles: default
+2019-06-26 23:00:21.516  WARN 1139 --- [main] o.s.b.c.c.a.DefaultBatchConfigurer       : No datasource was provided...using a Map based JobRepository
+2019-06-26 23:00:23.145  INFO 1139 --- [main] com.rakufit.keycloak.Application         : Started Application in 3.947 seconds (JVM running for 4.722)
+2019-06-26 23:00:23.318  INFO 1139 --- [main] c.r.keycloak.KeyCloakUserItemWriter      : ~~~~~~~~~~~~~~~~~~~~~~~~~~KeyCloakUser:firstName: null, lastName: null/userName:null
+2019-06-26 23:00:23.402  INFO 1139 --- [main] c.r.keycloak.KeyCloakUserItemWriter      : ~~~~~~~~~~~~~~~~~~~~~~~~~~KeyCloakUser:firstName: null, lastName: null/userName:null
+2019-06-26 23:00:23.428  INFO 1139 --- [main] c.r.keycloak.KeyCloakUserItemWriter      : ~~~~~~~~~~~~~~~~~~~~~~~~~~KeyCloakUser:firstName: null, lastName: null/userName:null
+2019-06-26 23:00:23.454  INFO 1139 --- [main] c.r.keycloak.KeyCloakUserItemWriter      : ~~~~~~~~~~~~~~~~~~~~~~~~~~KeyCloakUser:firstName: null, lastName: null/userName:null
+2019-06-26 23:00:23.485  INFO 1139 --- [main] c.r.keycloak.KeyCloakUserItemWriter      : ~~~~~~~~~~~~~~~~~~~~~~~~~~KeyCloakUser:firstName: null, lastName: null/userName:null
+2019-06-26 23:00:23.533  INFO 1139 --- [main] .r.k.l.JobCompletionNotificationListener : !!! JOB FINISHED! Time to verify the results
+2019-06-26 23:00:23.533  INFO 1139 --- [main] .r.k.l.JobCompletionNotificationListener : jobID:0
+2019-06-26 23:00:23.534  INFO 1139 --- [main] .r.k.l.JobCompletionNotificationListener : JobConfigurationName:null

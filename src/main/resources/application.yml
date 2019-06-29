@@ -1,4 +1,6 @@
 spring:
   batch:
     job:
-      enabled: false
+      enabled: true
+logging:
+  file: logs/batch.log

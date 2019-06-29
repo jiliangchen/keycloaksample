@@ -1,14 +1,13 @@
 package com.rakufit.keycloak;
 
-import org.jboss.resteasy.client.jaxrs.ResteasyClientBuilder;
-import org.keycloak.admin.client.Keycloak;
-import org.keycloak.admin.client.KeycloakBuilder;
 import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
+import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
+
 
 @SpringBootApplication
+@EnableAutoConfiguration(exclude={DataSourceAutoConfiguration.class})
 public class Application {
     public static String KEYCLOAK_USER = "";
     public static String KEYCLOAK_PASSWORD = "";
