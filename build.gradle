@@ -67,7 +67,7 @@ test.finalizedBy jacocoTestReport
 spotbugs {
     ignoreFailures = true
     effort = "max"
-    reportLevel = "low"
+    reportLevel = "high"
 }
 
 tasks.withType(com.github.spotbugs.SpotBugsTask) {
