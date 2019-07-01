@@ -37,6 +37,7 @@ dependencies {
     compile("org.keycloak:keycloak-admin-client:6.0.0")
     compile("org.jboss.resteasy:resteasy-client:3.6.2.Final")
     compile("org.jboss.resteasy:resteasy-jackson2-provider:3.6.2.Final")
+    compile('org.slf4j:slf4j-log4j12:1.7.21')
     testCompile("junit:junit")
     testCompile("org.mockito:mockito-core")
     testCompile('org.springframework.boot:spring-boot-starter-test')
@@ -67,15 +68,17 @@ test.finalizedBy jacocoTestReport
 spotbugs {
     ignoreFailures = true
     effort = "max"
-    reportLevel = "high"
+    reportLevel = "low"
+    spotbugsTest.enabled = false
 }
 
 tasks.withType(com.github.spotbugs.SpotBugsTask) {
+	source = fileTree('src/main/java')
     reports {
-        xml.enabled = true
-        html.enabled = false
-        xml {
-            destination file("${project.rootDir}/build/reports/spotbugs/spotbugs.xml")
+        xml.enabled = false
+        html.enabled = true
+        html {
+            destination file("${project.rootDir}/build/reports/spotbugs/spotbugs.html")
         }
         
     }
