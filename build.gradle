@@ -77,7 +77,7 @@ tasks.withType(com.github.spotbugs.SpotBugsTask) {
     reports {
         xml.enabled = true
         html.enabled = false
-        html {
+        xml {
             destination file("${project.rootDir}/build/reports/spotbugs/spotbugs.xml")
         }
         
