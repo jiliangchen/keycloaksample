@@ -1,9 +1,13 @@
 buildscript {
     repositories {
         mavenCentral()
+        maven {
+      		url "https://plugins.gradle.org/m2/"
+    	}
     }
     dependencies {
         classpath("org.springframework.boot:spring-boot-gradle-plugin:2.0.5.RELEASE")
+        classpath "gradle.plugin.com.github.spotbugs:spotbugs-gradle-plugin:2.0.0"
     }
 }
 
@@ -13,7 +17,8 @@ apply plugin: 'idea'
 apply plugin: 'org.springframework.boot'
 apply plugin: 'io.spring.dependency-management'
 apply plugin: 'jacoco'
-apply plugin: 'findbugs'
+//apply plugin: 'findbugs'
+apply plugin: "com.github.spotbugs"
 
 jacoco {
     toolVersion = "0.8.3"
@@ -44,17 +49,34 @@ bootJar {
 // create test coverage every time the test task is performed
 test.finalizedBy jacocoTestReport
 
-findbugs {
-  ignoreFailures = true
-  findbugsTest.enabled=false
+//findbugs {
+//  ignoreFailures = true
+//  findbugsTest.enabled=false
+//}
+
+//tasks.withType(FindBugs) {
+//	reports {
+//        xml.enabled = true
+//        html.enabled = false
+//        xml {
+//            destination file("${project.rootDir}/build/reports/findbugs.xml")
+//        }
+//    }
+//}
+
+spotbugs {
+    ignoreFailures = true
+    effort = "max"
+    reportLevel = "low"
 }
 
-tasks.withType(FindBugs) {
-	reports {
+tasks.withType(com.github.spotbugs.SpotBugsTask) {
+    reports {
         xml.enabled = true
         html.enabled = false
         xml {
-            destination file("${project.rootDir}/build/reports/findbugs.xml")
+            destination file("${project.rootDir}/build/reports/spotbugs/spotbugs.xml")
         }
+        
     }
 }
