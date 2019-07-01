@@ -75,10 +75,10 @@ spotbugs {
 tasks.withType(com.github.spotbugs.SpotBugsTask) {
 	source = fileTree('src/main/java')
     reports {
-        xml.enabled = false
-        html.enabled = true
+        xml.enabled = true
+        html.enabled = false
         html {
-            destination file("${project.rootDir}/build/reports/spotbugs/spotbugs.html")
+            destination file("${project.rootDir}/build/reports/spotbugs/spotbugs.xml")
         }
         
     }
